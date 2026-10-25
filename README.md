@@ -1,5 +1,7 @@
 # AADSTS sign-in error codes: attack signal, MITRE technique and category
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23641386.svg)](https://doi.org/10.5281/zenodo.23641386)
+
 An open dataset that classifies Microsoft Entra ID `AADSTS` sign-in error codes for security triage: whether a code is a failure, an interrupt or a configuration issue, how much attack signal it usually carries, which MITRE ATT&CK techniques it relates to, which sign-in log tables it shows up in, and which codes are related.
 
 - **Browse it with explanations and KQL:** https://brambrinkmeier.com/entra/aadsts/
@@ -45,7 +47,7 @@ SigninLogs
 
 ## Cite
 
-See `CITATION.cff`, or the DOI badge once released on Zenodo.
+Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo), or see `CITATION.cff`.
 
 ## License
 

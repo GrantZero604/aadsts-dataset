@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
 title: "AADSTS sign-in error codes: attack signal, MITRE technique and category"
 type: dataset
+doi: "10.5281/zenodo.23641386"
 authors:
   - family-names: Brinkmeier
     given-names: Bram
