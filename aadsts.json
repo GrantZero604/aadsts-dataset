@@ -1,0 +1,789 @@
+{
+  "name": "AADSTS sign-in error codes: attack signal, MITRE technique and category",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Bram Brinkmeier, https://brambrinkmeier.com/ (AADSTS code map: https://brambrinkmeier.com/entra/aadsts/)",
+  "generated": "2026-10-25",
+  "count": 34,
+  "note": "Only this site's own classification fields are included. Microsoft's error descriptions are not included; see Microsoft's error code reference: https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes",
+  "codes": [
+    {
+      "code": "50011",
+      "name": "InvalidReplyTo",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [
+        "T1528"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "700016",
+        "50105",
+        "65001",
+        "50020"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50011/"
+    },
+    {
+      "code": "50020",
+      "name": "UserUnauthorized",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "90072",
+        "50034",
+        "700016",
+        "50105",
+        "50011"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50020/"
+    },
+    {
+      "code": "50034",
+      "name": "UserAccountNotFound",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1087.004",
+        "T1110.003"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50126",
+        "50053",
+        "50057",
+        "50020",
+        "16000"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50034/"
+    },
+    {
+      "code": "50053",
+      "name": "IdsLocked",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "high",
+      "mitre": [
+        "T1110.003",
+        "T1110.001"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50126",
+        "50057",
+        "50034",
+        "53003",
+        "530032"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50053/"
+    },
+    {
+      "code": "50055",
+      "name": "InvalidPasswordExpiredPassword",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1110.003",
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50126",
+        "50053",
+        "50057",
+        "50076",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50055/"
+    },
+    {
+      "code": "50057",
+      "name": "UserDisabled",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1110.003",
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50126",
+        "50053",
+        "50034",
+        "50055",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50057/"
+    },
+    {
+      "code": "50058",
+      "name": "UserInformationNotProvided",
+      "category": "token",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50140",
+        "70043",
+        "700082"
+      ],
+      "status": "draft",
+      "updated": "2026-10-24",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50058/"
+    },
+    {
+      "code": "50074",
+      "name": "UserStrongAuthClientAuthNRequiredInterrupt",
+      "category": "mfa",
+      "kind": "interrupt",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1621",
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50076",
+        "500121",
+        "50126",
+        "53003",
+        "50079"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50074/"
+    },
+    {
+      "code": "50076",
+      "name": "UserStrongAuthClientAuthNRequired",
+      "category": "mfa",
+      "kind": "interrupt",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004",
+        "T1110.003"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50126",
+        "50074",
+        "500121",
+        "50079",
+        "53003",
+        "50158"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50076/"
+    },
+    {
+      "code": "50079",
+      "name": "UserStrongAuthEnrollmentRequired",
+      "category": "mfa",
+      "kind": "interrupt",
+      "attackSignal": "high",
+      "mitre": [
+        "T1078.004",
+        "T1098.005"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50076",
+        "50125",
+        "50126",
+        "50074",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50079/"
+    },
+    {
+      "code": "50097",
+      "name": "DeviceAuthenticationRequired",
+      "category": "device",
+      "kind": "interrupt",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "53000",
+        "53001",
+        "135011",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50097/"
+    },
+    {
+      "code": "50105",
+      "name": "EntitlementGrantsNotFound",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "53003",
+        "50020",
+        "50011",
+        "700016",
+        "65001"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50105/"
+    },
+    {
+      "code": "50125",
+      "name": "PasswordResetRegistrationRequiredInterrupt",
+      "category": "credentials",
+      "kind": "interrupt",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50079",
+        "50126",
+        "50055",
+        "50076",
+        "50140"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50125/"
+    },
+    {
+      "code": "50126",
+      "name": "InvalidUserNameOrPassword",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "high",
+      "mitre": [
+        "T1110.003",
+        "T1110.001"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50053",
+        "50057",
+        "50055",
+        "50034",
+        "53003",
+        "50076"
+      ],
+      "status": "draft",
+      "updated": "2026-10-24",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50126/"
+    },
+    {
+      "code": "50133",
+      "name": "SsoArtifactRevoked",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50173",
+        "50055",
+        "70043",
+        "700082",
+        "50126"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50133/"
+    },
+    {
+      "code": "50140",
+      "name": "KmsiInterrupt",
+      "category": "token",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50076",
+        "50074",
+        "50058",
+        "50126",
+        "50173",
+        "50133"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50140/"
+    },
+    {
+      "code": "50158",
+      "name": "External security challenge not satisfied",
+      "category": "mfa",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50076",
+        "50074",
+        "50126",
+        "53003",
+        "50140"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50158/"
+    },
+    {
+      "code": "50173",
+      "name": "Grant expired due to revocation",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1550.001"
+      ],
+      "tables": [
+        "AADNonInteractiveUserSignInLogs",
+        "SigninLogs"
+      ],
+      "related": [
+        "50133",
+        "70043",
+        "700082",
+        "135011",
+        "50057"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50173/"
+    },
+    {
+      "code": "53000",
+      "name": "DeviceNotCompliant",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004",
+        "T1557",
+        "T1539"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "53001",
+        "50097",
+        "53003",
+        "135011",
+        "50126"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/53000/"
+    },
+    {
+      "code": "53001",
+      "name": "DeviceNotDomainJoined",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "53000",
+        "50097",
+        "53003",
+        "135011"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/53001/"
+    },
+    {
+      "code": "53003",
+      "name": "BlockedByConditionalAccess",
+      "category": "conditional-access",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50126",
+        "53000",
+        "53001",
+        "530032",
+        "50076",
+        "50053"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/53003/"
+    },
+    {
+      "code": "65001",
+      "name": "DelegationDoesNotExist",
+      "category": "consent",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1528",
+        "T1566.002"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs",
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "90094",
+        "90095",
+        "700016",
+        "500011"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/65001/"
+    },
+    {
+      "code": "70043",
+      "name": "BadTokenDueToSignInFrequency",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "700082",
+        "50173",
+        "50133",
+        "50076",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-24",
+      "url": "https://brambrinkmeier.com/entra/aadsts/70043/"
+    },
+    {
+      "code": "90072",
+      "name": "PassThroughUserMfaError",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50020",
+        "50076",
+        "50079"
+      ],
+      "status": "draft",
+      "updated": "2026-10-24",
+      "url": "https://brambrinkmeier.com/entra/aadsts/90072/"
+    },
+    {
+      "code": "90094",
+      "name": "AdminConsentRequired",
+      "category": "consent",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1566.002",
+        "T1528"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "90095",
+        "65001",
+        "700016"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/90094/"
+    },
+    {
+      "code": "90095",
+      "name": "AdminConsentRequiredRequestAccess",
+      "category": "consent",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [
+        "T1566.002",
+        "T1528"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "90094",
+        "65001",
+        "700016"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/90095/"
+    },
+    {
+      "code": "135011",
+      "name": "Device disabled",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50173",
+        "50057",
+        "53000",
+        "53001",
+        "50097"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/135011/"
+    },
+    {
+      "code": "500011",
+      "name": "InvalidResourceServicePrincipalNotFound",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "700016",
+        "65001",
+        "7000222"
+      ],
+      "status": "draft",
+      "updated": "2026-10-24",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500011/"
+    },
+    {
+      "code": "500121",
+      "name": "MFA prompt not completed",
+      "category": "mfa",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1621"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50074",
+        "50076",
+        "50079",
+        "50126",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500121/"
+    },
+    {
+      "code": "530032",
+      "name": "BlockedByConditionalAccessOnSecurityPolicy",
+      "category": "conditional-access",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004",
+        "T1110.003"
+      ],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "53003",
+        "50126",
+        "50053",
+        "53000",
+        "50076"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/530032/"
+    },
+    {
+      "code": "700016",
+      "name": "UnauthorizedClient_DoesNotMatchRequest",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "50011",
+        "65001",
+        "50020",
+        "7000215",
+        "500011"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700016/"
+    },
+    {
+      "code": "700082",
+      "name": "ExpiredOrRevokedGrantInactiveToken",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "70043",
+        "50173",
+        "50133"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700082/"
+    },
+    {
+      "code": "7000215",
+      "name": "Invalid client secret",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004"
+      ],
+      "tables": [
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "7000222",
+        "700016",
+        "500011",
+        "65001"
+      ],
+      "status": "draft",
+      "updated": "2026-10-11",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000215/"
+    },
+    {
+      "code": "7000222",
+      "name": "InvalidClientSecretExpiredKeysProvided",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "7000215",
+        "700016",
+        "500011"
+      ],
+      "status": "draft",
+      "updated": "2026-10-24",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000222/"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "AADSTS sign-in error codes: attack signal, MITRE technique and category"
+type: dataset
+authors:
+  - family-names: Brinkmeier
+    given-names: Bram
+    website: "https://brambrinkmeier.com/"
+url: "https://brambrinkmeier.com/aadsts-kql-lookup/"
+repository-code: "https://github.com/GrantZero604/aadsts-dataset"
+license: CC-BY-4.0
+keywords: [AADSTS, "Microsoft Entra ID", "sign-in logs", KQL, "Microsoft Sentinel", "identity security", "MITRE ATT&CK"]
