@@ -3,8 +3,8 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Bram Brinkmeier, https://brambrinkmeier.com/ (AADSTS code map: https://brambrinkmeier.com/entra/aadsts/)",
-  "generated": "2026-10-25",
-  "count": 34,
+  "generated": "2026-10-27",
+  "count": 36,
   "note": "Only this site's own classification fields are included. Microsoft's error descriptions are not included; see Microsoft's error code reference: https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes",
   "codes": [
     {
@@ -47,7 +47,7 @@
         "50011"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50020/"
     },
     {
@@ -71,7 +71,7 @@
         "16000"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50034/"
     },
     {
@@ -120,7 +120,7 @@
         "53003"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50055/"
     },
     {
@@ -145,7 +145,7 @@
         "53003"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50057/"
     },
     {
@@ -169,6 +169,29 @@
       "url": "https://brambrinkmeier.com/entra/aadsts/50058/"
     },
     {
+      "code": "50072",
+      "name": "UserStrongAuthEnrollmentRequiredInterrupt",
+      "category": "mfa",
+      "kind": "interrupt",
+      "attackSignal": "medium",
+      "mitre": [
+        "T1078.004",
+        "T1098.005"
+      ],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50079",
+        "50074",
+        "50076",
+        "53003"
+      ],
+      "status": "draft",
+      "updated": "2026-10-25",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50072/"
+    },
+    {
       "code": "50074",
       "name": "UserStrongAuthClientAuthNRequiredInterrupt",
       "category": "mfa",
@@ -186,10 +209,11 @@
         "500121",
         "50126",
         "53003",
-        "50079"
+        "50079",
+        "50072"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50074/"
     },
     {
@@ -233,6 +257,7 @@
       ],
       "related": [
         "50076",
+        "50072",
         "50125",
         "50126",
         "50074",
@@ -285,7 +310,7 @@
         "65001"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50105/"
     },
     {
@@ -334,7 +359,7 @@
         "50076"
       ],
       "status": "draft",
-      "updated": "2026-10-24",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50126/"
     },
     {
@@ -427,7 +452,7 @@
         "50057"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50173/"
     },
     {
@@ -522,12 +547,32 @@
       "related": [
         "90094",
         "90095",
+        "65004",
         "700016",
         "500011"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/65001/"
+    },
+    {
+      "code": "65004",
+      "name": "UserDeclinedConsent",
+      "category": "consent",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "65001",
+        "90095",
+        "90094"
+      ],
+      "status": "draft",
+      "updated": "2026-10-25",
+      "url": "https://brambrinkmeier.com/entra/aadsts/65004/"
     },
     {
       "code": "70043",
@@ -547,7 +592,7 @@
         "53003"
       ],
       "status": "draft",
-      "updated": "2026-10-24",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/70043/"
     },
     {
@@ -585,6 +630,7 @@
       "related": [
         "90095",
         "65001",
+        "65004",
         "700016"
       ],
       "status": "draft",
@@ -607,6 +653,7 @@
       "related": [
         "90094",
         "65001",
+        "65004",
         "700016"
       ],
       "status": "draft",
@@ -652,7 +699,7 @@
         "7000222"
       ],
       "status": "draft",
-      "updated": "2026-10-24",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/500011/"
     },
     {
@@ -722,7 +769,7 @@
         "500011"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/700016/"
     },
     {
@@ -741,7 +788,7 @@
         "50133"
       ],
       "status": "draft",
-      "updated": "2026-10-11",
+      "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/700082/"
     },
     {

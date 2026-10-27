@@ -36,7 +36,7 @@ Only the author's own classification is included. Microsoft's error descriptions
 ## Use in KQL
 
 ```kusto
-let aadsts = externaldata(code:string, name:string, category:string, kind:string, attackSignal:string)
+let aadsts = externaldata(code:string, name:string, category:string, kind:string, attackSignal:string, mitre:string, tables:string, related:string, status:string, updated:string, url:string)
   [@"https://raw.githubusercontent.com/GrantZero604/aadsts-dataset/main/aadsts.csv"]
   with (format="csv", ignoreFirstRecord=true);
 SigninLogs
@@ -47,7 +47,7 @@ SigninLogs
 
 ## Cite
 
-Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo), or see `CITATION.cff`.
+Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo; this is the DOI of version 1.0.0), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 36 codes; all rows are `draft` unless `status` says `verified`.
 
 ## License
 
