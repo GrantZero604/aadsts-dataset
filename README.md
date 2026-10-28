@@ -27,7 +27,9 @@ An open dataset that classifies Microsoft Entra ID `AADSTS` sign-in error codes 
 | `mitre` | Related MITRE ATT&CK technique IDs |
 | `tables` | Log Analytics tables where the code appears |
 | `related` | Codes that are usually read together with this one |
-| `status` | draft or verified (verified = reproduced in a lab tenant) |
+| `status` | draft or verified (editorial status of the page) |
+| `verification` | documentation (based on Microsoft documentation), lab-reproduced (an automated lab run returned the code; sign-in log row and KQL not yet checked) or lab-verified |
+| `labReproduced` | Date of the lab reproduction, if any |
 | `updated` | Last review date |
 | `url` | Page with the full explanation, attack patterns and KQL |
 
@@ -36,7 +38,7 @@ Only the author's own classification is included. Microsoft's error descriptions
 ## Use in KQL
 
 ```kusto
-let aadsts = externaldata(code:string, name:string, category:string, kind:string, attackSignal:string, mitre:string, tables:string, related:string, status:string, updated:string, url:string)
+let aadsts = externaldata(code:string, name:string, category:string, kind:string, attackSignal:string, mitre:string, tables:string, related:string, status:string, verification:string, labReproduced:string, updated:string, url:string)
   [@"https://raw.githubusercontent.com/GrantZero604/aadsts-dataset/main/aadsts.csv"]
   with (format="csv", ignoreFirstRecord=true);
 SigninLogs
@@ -47,7 +49,7 @@ SigninLogs
 
 ## Cite
 
-Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo; this is the DOI of version 1.0.0), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 36 codes; all rows are `draft` unless `status` says `verified`.
+Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo; this is the DOI of version 1.0.0), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 36 codes; `verification` shows which codes were reproduced in a lab tenant.
 
 ## License
 

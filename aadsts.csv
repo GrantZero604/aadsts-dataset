@@ -1,37 +1,37 @@
-code,name,category,kind,attackSignal,mitre,tables,related,status,updated,url
-50011,InvalidReplyTo,app-config,failure,low,T1528,SigninLogs,700016;50105;65001;50020,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50011/
-50020,UserUnauthorized,b2b-tenant,failure,low,,SigninLogs,90072;50034;700016;50105;50011,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50020/
-50034,UserAccountNotFound,credentials,failure,medium,T1087.004;T1110.003,SigninLogs,50126;50053;50057;50020;16000,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50034/
-50053,IdsLocked,credentials,failure,high,T1110.003;T1110.001,SigninLogs;AADNonInteractiveUserSignInLogs,50126;50057;50034;53003;530032,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50053/
-50055,InvalidPasswordExpiredPassword,credentials,failure,medium,T1110.003;T1078.004,SigninLogs,50126;50053;50057;50076;53003,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50055/
-50057,UserDisabled,credentials,failure,medium,T1110.003;T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,50126;50053;50034;50055;53003,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50057/
-50058,UserInformationNotProvided,token,interrupt,low,,SigninLogs;AADNonInteractiveUserSignInLogs,50140;70043;700082,draft,2026-10-24,https://brambrinkmeier.com/entra/aadsts/50058/
-50072,UserStrongAuthEnrollmentRequiredInterrupt,mfa,interrupt,medium,T1078.004;T1098.005,SigninLogs,50079;50074;50076;53003,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50072/
-50074,UserStrongAuthClientAuthNRequiredInterrupt,mfa,interrupt,medium,T1621;T1078.004,SigninLogs,50076;500121;50126;53003;50079;50072,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50074/
-50076,UserStrongAuthClientAuthNRequired,mfa,interrupt,medium,T1078.004;T1110.003,SigninLogs;AADNonInteractiveUserSignInLogs,50126;50074;500121;50079;53003;50158,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50076/
-50079,UserStrongAuthEnrollmentRequired,mfa,interrupt,high,T1078.004;T1098.005,SigninLogs,50076;50072;50125;50126;50074;53003,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50079/
-50097,DeviceAuthenticationRequired,device,interrupt,medium,T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,53000;53001;135011;53003,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50097/
-50105,EntitlementGrantsNotFound,app-config,failure,low,T1078.004,SigninLogs,53003;50020;50011;700016;65001,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50105/
-50125,PasswordResetRegistrationRequiredInterrupt,credentials,interrupt,medium,T1078.004,SigninLogs,50079;50126;50055;50076;50140,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50125/
-50126,InvalidUserNameOrPassword,credentials,failure,high,T1110.003;T1110.001,SigninLogs;AADNonInteractiveUserSignInLogs,50053;50057;50055;50034;53003;50076,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50126/
-50133,SsoArtifactRevoked,token,failure,low,,SigninLogs;AADNonInteractiveUserSignInLogs,50173;50055;70043;700082;50126,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50133/
-50140,KmsiInterrupt,token,interrupt,low,T1078.004,SigninLogs,50076;50074;50058;50126;50173;50133,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50140/
-50158,External security challenge not satisfied,mfa,interrupt,low,T1078.004,SigninLogs,50076;50074;50126;53003;50140,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50158/
-50173,Grant expired due to revocation,token,failure,medium,T1550.001,AADNonInteractiveUserSignInLogs;SigninLogs,50133;70043;700082;135011;50057,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50173/
-53000,DeviceNotCompliant,device,failure,medium,T1078.004;T1557;T1539,SigninLogs;AADNonInteractiveUserSignInLogs,53001;50097;53003;135011;50126,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/53000/
-53001,DeviceNotDomainJoined,device,failure,medium,T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,53000;50097;53003;135011,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/53001/
-53003,BlockedByConditionalAccess,conditional-access,failure,medium,T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,50126;53000;53001;530032;50076;50053,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/53003/
-65001,DelegationDoesNotExist,consent,failure,medium,T1528;T1566.002,SigninLogs;AADNonInteractiveUserSignInLogs;AADServicePrincipalSignInLogs,90094;90095;65004;700016;500011,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/65001/
-65004,UserDeclinedConsent,consent,failure,low,,SigninLogs,65001;90095;90094,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/65004/
-70043,BadTokenDueToSignInFrequency,token,failure,low,,AADNonInteractiveUserSignInLogs,700082;50173;50133;50076;53003,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/70043/
-90072,PassThroughUserMfaError,b2b-tenant,failure,low,,SigninLogs,50020;50076;50079,draft,2026-10-24,https://brambrinkmeier.com/entra/aadsts/90072/
-90094,AdminConsentRequired,consent,failure,medium,T1566.002;T1528,SigninLogs,90095;65001;65004;700016,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/90094/
-90095,AdminConsentRequiredRequestAccess,consent,interrupt,low,T1566.002;T1528,SigninLogs,90094;65001;65004;700016,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/90095/
-135011,Device disabled,device,failure,low,,SigninLogs;AADNonInteractiveUserSignInLogs,50173;50057;53000;53001;50097,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/135011/
-500011,InvalidResourceServicePrincipalNotFound,app-config,failure,low,,SigninLogs;AADServicePrincipalSignInLogs,700016;65001;7000222,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/500011/
-500121,MFA prompt not completed,mfa,failure,medium,T1621,SigninLogs,50074;50076;50079;50126;53003,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/500121/
-530032,BlockedByConditionalAccessOnSecurityPolicy,conditional-access,failure,medium,T1078.004;T1110.003,SigninLogs;AADNonInteractiveUserSignInLogs,53003;50126;50053;53000;50076,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/530032/
-700016,UnauthorizedClient_DoesNotMatchRequest,app-config,failure,low,,SigninLogs;AADServicePrincipalSignInLogs,50011;65001;50020;7000215;500011,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/700016/
-700082,ExpiredOrRevokedGrantInactiveToken,token,failure,low,,AADNonInteractiveUserSignInLogs,70043;50173;50133,draft,2026-10-25,https://brambrinkmeier.com/entra/aadsts/700082/
-7000215,Invalid client secret,app-config,failure,medium,T1078.004,AADServicePrincipalSignInLogs,7000222;700016;500011;65001,draft,2026-10-11,https://brambrinkmeier.com/entra/aadsts/7000215/
-7000222,InvalidClientSecretExpiredKeysProvided,app-config,failure,low,,AADServicePrincipalSignInLogs,7000215;700016;500011,draft,2026-10-24,https://brambrinkmeier.com/entra/aadsts/7000222/
+code,name,category,kind,attackSignal,mitre,tables,related,status,verification,labReproduced,updated,url
+50011,InvalidReplyTo,app-config,failure,low,T1528,SigninLogs,700016;50105;65001;50020,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50011/
+50020,UserUnauthorized,b2b-tenant,failure,low,,SigninLogs,90072;50034;700016;50105;50011,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50020/
+50034,UserAccountNotFound,credentials,failure,medium,T1087.004;T1110.003,SigninLogs,50126;50053;50057;50020;16000,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50034/
+50053,IdsLocked,credentials,failure,high,T1110.003;T1110.001,SigninLogs;AADNonInteractiveUserSignInLogs,50126;50057;50034;53003;530032,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50053/
+50055,InvalidPasswordExpiredPassword,credentials,failure,medium,T1110.003;T1078.004,SigninLogs,50126;50053;50057;50076;53003,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50055/
+50057,UserDisabled,credentials,failure,medium,T1110.003;T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,50126;50053;50034;50055;53003,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50057/
+50058,UserInformationNotProvided,token,interrupt,low,,SigninLogs;AADNonInteractiveUserSignInLogs,50140;70043;700082,draft,documentation,,2026-10-24,https://brambrinkmeier.com/entra/aadsts/50058/
+50072,UserStrongAuthEnrollmentRequiredInterrupt,mfa,interrupt,medium,T1078.004;T1098.005,SigninLogs,50079;50074;50076;53003,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50072/
+50074,UserStrongAuthClientAuthNRequiredInterrupt,mfa,interrupt,medium,T1621;T1078.004,SigninLogs,50076;500121;50126;53003;50079;50072,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50074/
+50076,UserStrongAuthClientAuthNRequired,mfa,interrupt,medium,T1078.004;T1110.003,SigninLogs;AADNonInteractiveUserSignInLogs,50126;50074;500121;50079;53003;50158,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50076/
+50079,UserStrongAuthEnrollmentRequired,mfa,interrupt,high,T1078.004;T1098.005,SigninLogs,50076;50072;50125;50126;50074;53003,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50079/
+50097,DeviceAuthenticationRequired,device,interrupt,medium,T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,53000;53001;135011;53003,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50097/
+50105,EntitlementGrantsNotFound,app-config,failure,low,T1078.004,SigninLogs,53003;50020;50011;700016;65001,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50105/
+50125,PasswordResetRegistrationRequiredInterrupt,credentials,interrupt,medium,T1078.004,SigninLogs,50079;50126;50055;50076;50140,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50125/
+50126,InvalidUserNameOrPassword,credentials,failure,high,T1110.003;T1110.001,SigninLogs;AADNonInteractiveUserSignInLogs,50053;50057;50055;50034;53003;50076,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50126/
+50133,SsoArtifactRevoked,token,failure,low,,SigninLogs;AADNonInteractiveUserSignInLogs,50173;50055;70043;700082;50126,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50133/
+50140,KmsiInterrupt,token,interrupt,low,T1078.004,SigninLogs,50076;50074;50058;50126;50173;50133,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50140/
+50158,External security challenge not satisfied,mfa,interrupt,low,T1078.004,SigninLogs,50076;50074;50126;53003;50140,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/50158/
+50173,Grant expired due to revocation,token,failure,medium,T1550.001,AADNonInteractiveUserSignInLogs;SigninLogs,50133;70043;700082;135011;50057,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/50173/
+53000,DeviceNotCompliant,device,failure,medium,T1078.004;T1557;T1539,SigninLogs;AADNonInteractiveUserSignInLogs,53001;50097;53003;135011;50126,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/53000/
+53001,DeviceNotDomainJoined,device,failure,medium,T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,53000;50097;53003;135011,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/53001/
+53003,BlockedByConditionalAccess,conditional-access,failure,medium,T1078.004,SigninLogs;AADNonInteractiveUserSignInLogs,50126;53000;53001;530032;50076;50053,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/53003/
+65001,DelegationDoesNotExist,consent,failure,medium,T1528;T1566.002,SigninLogs;AADNonInteractiveUserSignInLogs;AADServicePrincipalSignInLogs,90094;90095;65004;700016;500011,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/65001/
+65004,UserDeclinedConsent,consent,failure,low,,SigninLogs,65001;90095;90094,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/65004/
+70043,BadTokenDueToSignInFrequency,token,failure,low,,AADNonInteractiveUserSignInLogs,700082;50173;50133;50076;53003,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/70043/
+90072,PassThroughUserMfaError,b2b-tenant,failure,low,,SigninLogs,50020;50076;50079,draft,documentation,,2026-10-24,https://brambrinkmeier.com/entra/aadsts/90072/
+90094,AdminConsentRequired,consent,failure,medium,T1566.002;T1528,SigninLogs,90095;65001;65004;700016,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/90094/
+90095,AdminConsentRequiredRequestAccess,consent,interrupt,low,T1566.002;T1528,SigninLogs,90094;65001;65004;700016,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/90095/
+135011,Device disabled,device,failure,low,,SigninLogs;AADNonInteractiveUserSignInLogs,50173;50057;53000;53001;50097,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/135011/
+500011,InvalidResourceServicePrincipalNotFound,app-config,failure,low,,SigninLogs;AADServicePrincipalSignInLogs,700016;65001;7000222,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/500011/
+500121,MFA prompt not completed,mfa,failure,medium,T1621,SigninLogs,50074;50076;50079;50126;53003,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/500121/
+530032,BlockedByConditionalAccessOnSecurityPolicy,conditional-access,failure,medium,T1078.004;T1110.003,SigninLogs;AADNonInteractiveUserSignInLogs,53003;50126;50053;53000;50076,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/530032/
+700016,UnauthorizedClient_DoesNotMatchRequest,app-config,failure,low,,SigninLogs;AADServicePrincipalSignInLogs,50011;65001;50020;7000215;500011,draft,lab-reproduced,2026-10-25,2026-10-25,https://brambrinkmeier.com/entra/aadsts/700016/
+700082,ExpiredOrRevokedGrantInactiveToken,token,failure,low,,AADNonInteractiveUserSignInLogs,70043;50173;50133,draft,documentation,,2026-10-25,https://brambrinkmeier.com/entra/aadsts/700082/
+7000215,Invalid client secret,app-config,failure,medium,T1078.004,AADServicePrincipalSignInLogs,7000222;700016;500011;65001,draft,documentation,,2026-10-11,https://brambrinkmeier.com/entra/aadsts/7000215/
+7000222,InvalidClientSecretExpiredKeysProvided,app-config,failure,low,,AADServicePrincipalSignInLogs,7000215;700016;500011,draft,documentation,,2026-10-24,https://brambrinkmeier.com/entra/aadsts/7000222/
