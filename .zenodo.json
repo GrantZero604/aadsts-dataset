@@ -1,9 +1,28 @@
 {
   "title": "AADSTS sign-in error codes: attack signal, MITRE technique and category",
   "upload_type": "dataset",
-  "description": "Open dataset classifying Microsoft Entra ID AADSTS sign-in error codes for security triage: kind (failure, interrupt, config), attack-signal rating, related MITRE ATT&CK techniques, sign-in log tables and related codes. Full explanations and KQL at https://brambrinkmeier.com/entra/aadsts/",
-  "creators": [{"name": "Brinkmeier, Bram"}],
+  "description": "Open dataset classifying Microsoft Entra ID AADSTS sign-in error codes for security triage: kind (failure, interrupt, config), attack-signal rating, related MITRE ATT&CK techniques, sign-in log tables and related codes. Version 1.1.0 has 90 codes, 39 of them missing from Microsoft's error code reference (field inMicrosoftReference), and marks which codes were reproduced in a lab tenant and which have a captured sign-in log row. Full explanations and KQL at https://brambrinkmeier.com/entra/aadsts/",
+  "creators": [
+    {
+      "name": "Brinkmeier, Bram"
+    }
+  ],
   "license": "cc-by-4.0",
-  "keywords": ["AADSTS", "Microsoft Entra ID", "sign-in logs", "KQL", "Microsoft Sentinel", "identity security", "MITRE ATT&CK"],
-  "related_identifiers": [{"identifier": "https://brambrinkmeier.com/aadsts-kql-lookup/", "relation": "isDocumentedBy", "resource_type": "publication-other"}]
+  "keywords": [
+    "AADSTS",
+    "Microsoft Entra ID",
+    "sign-in logs",
+    "KQL",
+    "Microsoft Sentinel",
+    "identity security",
+    "MITRE ATT&CK"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://brambrinkmeier.com/aadsts-kql-lookup/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    }
+  ],
+  "version": "1.1.0"
 }
