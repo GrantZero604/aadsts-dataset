@@ -1,6 +1,6 @@
 # AADSTS sign-in error codes: attack signal, MITRE technique and category
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23641386.svg)](https://doi.org/10.5281/zenodo.23641386)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23641385.svg)](https://doi.org/10.5281/zenodo.23641385)
 
 An open dataset that classifies Microsoft Entra ID `AADSTS` sign-in error codes for security triage: whether a code is a failure, an interrupt or a configuration issue, how much attack signal it usually carries, which MITRE ATT&CK techniques it relates to, which sign-in log tables it shows up in, and which codes are related.
 
@@ -51,7 +51,7 @@ SigninLogs
 
 ## Cite
 
-Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo; this is the DOI of version 1.0.0), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 90 codes, 39 of them missing from Microsoft's error reference; `verification` shows which codes were reproduced in a lab tenant.
+Cite via DOI [10.5281/zenodo.23641385](https://doi.org/10.5281/zenodo.23641385) (Zenodo; always resolves to the latest version). Version DOIs: 1.1.0 is [10.5281/zenodo.23816201](https://doi.org/10.5281/zenodo.23816201), 1.0.0 is [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 90 codes, 39 of them missing from Microsoft's error reference; `verification` shows which codes were reproduced in a lab tenant.
 
 ## License
 
