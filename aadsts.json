@@ -3,10 +3,33 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Bram Brinkmeier, https://brambrinkmeier.com/ (AADSTS code map: https://brambrinkmeier.com/entra/aadsts/)",
-  "generated": "2026-10-28",
-  "count": 36,
+  "generated": "2026-10-30",
+  "count": 90,
   "note": "Only this site's own classification fields are included. Microsoft's error descriptions are not included; see Microsoft's error code reference: https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes",
   "codes": [
+    {
+      "code": "16000",
+      "name": "InteractionRequired",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50020",
+        "50034",
+        "90072",
+        "90002"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/16000/"
+    },
     {
       "code": "50011",
       "name": "InvalidReplyTo",
@@ -27,6 +50,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50011/"
     },
@@ -49,6 +73,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50020/"
     },
@@ -75,8 +100,31 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50034/"
+    },
+    {
+      "code": "50052",
+      "name": "InvalidPasswordExceedsMaxLength",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50126",
+        "50055",
+        "50053",
+        "50034"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50052/"
     },
     {
       "code": "50053",
@@ -101,8 +149,29 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50053/"
+    },
+    {
+      "code": "50054",
+      "name": "",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50126",
+        "50055",
+        "50133",
+        "50053"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50054/"
     },
     {
       "code": "50055",
@@ -127,7 +196,9 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
-      "updated": "2026-10-25",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50055/"
     },
     {
@@ -154,7 +225,9 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
-      "updated": "2026-10-25",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50057/"
     },
     {
@@ -175,6 +248,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-24",
       "url": "https://brambrinkmeier.com/entra/aadsts/50058/"
     },
@@ -199,6 +273,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50072/"
     },
@@ -225,6 +300,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50074/"
     },
@@ -252,6 +328,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50076/"
     },
@@ -278,8 +355,30 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50079/"
+    },
+    {
+      "code": "50089",
+      "name": "",
+      "category": "token",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50133",
+        "50173",
+        "70043",
+        "700082",
+        "50058"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50089/"
     },
     {
       "code": "50097",
@@ -302,6 +401,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50097/"
     },
@@ -326,6 +426,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50105/"
     },
@@ -350,6 +451,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50125/"
     },
@@ -378,7 +480,9 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
-      "updated": "2026-10-25",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50126/"
     },
     {
@@ -401,6 +505,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50133/"
     },
@@ -426,8 +531,32 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50140/"
+    },
+    {
+      "code": "50155",
+      "name": "DeviceAuthenticationFailed",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50097",
+        "53000",
+        "53001",
+        "135011"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50155/"
     },
     {
       "code": "50158",
@@ -450,6 +579,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/50158/"
     },
@@ -475,8 +605,32 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/50173/"
+    },
+    {
+      "code": "50196",
+      "name": "LoopDetected",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs",
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "50058",
+        "70043",
+        "700082"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50196/"
     },
     {
       "code": "53000",
@@ -502,6 +656,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/53000/"
     },
@@ -526,6 +681,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/53001/"
     },
@@ -552,8 +708,32 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/53003/"
+    },
+    {
+      "code": "54005",
+      "name": "",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "50058",
+        "700082",
+        "700054",
+        "50196"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/54005/"
     },
     {
       "code": "65001",
@@ -580,7 +760,9 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
-      "updated": "2026-10-25",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/65001/"
     },
     {
@@ -600,8 +782,76 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/65004/"
+    },
+    {
+      "code": "70008",
+      "name": "ExpiredOrRevokedGrant",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADNonInteractiveUserSignInLogs",
+        "SigninLogs"
+      ],
+      "related": [
+        "700082",
+        "50173",
+        "70043",
+        "50133"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/70008/"
+    },
+    {
+      "code": "70021",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700211",
+        "700212",
+        "700213",
+        "7002138",
+        "70025",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/70021/"
+    },
+    {
+      "code": "70025",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "70021",
+        "700211",
+        "700212",
+        "700213",
+        "7002138",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/70025/"
     },
     {
       "code": "70043",
@@ -622,8 +872,72 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/70043/"
+    },
+    {
+      "code": "70044",
+      "name": "",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "70043",
+        "700082",
+        "50058",
+        "50133",
+        "53003"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/70044/"
+    },
+    {
+      "code": "75011",
+      "name": "NoMatchedAuthnContextInOutputClaims",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50076",
+        "50074",
+        "50058"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/75011/"
+    },
+    {
+      "code": "90002",
+      "name": "InvalidTenantName",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700016",
+        "500011",
+        "16000",
+        "50034"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-25",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/90002/"
     },
     {
       "code": "90072",
@@ -642,6 +956,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-24",
       "url": "https://brambrinkmeier.com/entra/aadsts/90072/"
     },
@@ -666,6 +981,7 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/90094/"
     },
@@ -690,8 +1006,29 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/90095/"
+    },
+    {
+      "code": "90133",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700016",
+        "90002",
+        "500011",
+        "7000218"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/90133/"
     },
     {
       "code": "135011",
@@ -713,8 +1050,27 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/135011/"
+    },
+    {
+      "code": "165000",
+      "name": "",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50058",
+        "50140"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/165000/"
     },
     {
       "code": "500011",
@@ -735,8 +1091,52 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
-      "updated": "2026-10-25",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/500011/"
+    },
+    {
+      "code": "500031",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "75011",
+        "50011",
+        "700016",
+        "650056"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500031/"
+    },
+    {
+      "code": "500113",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50011",
+        "700051",
+        "700054",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500113/"
     },
     {
       "code": "500121",
@@ -759,8 +1159,173 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/500121/"
+    },
+    {
+      "code": "500200",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50020",
+        "90072",
+        "50034",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500200/"
+    },
+    {
+      "code": "500341",
+      "name": "",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50034",
+        "50057",
+        "50173",
+        "65001"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500341/"
+    },
+    {
+      "code": "500571",
+      "name": "",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50057",
+        "50020",
+        "90072",
+        "50034"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/500571/"
+    },
+    {
+      "code": "501051",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50105",
+        "500011",
+        "700016",
+        "65001",
+        "7000112"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/501051/"
+    },
+    {
+      "code": "530002",
+      "name": "",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "53000",
+        "50097",
+        "53003",
+        "530003",
+        "530004"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/530002/"
+    },
+    {
+      "code": "530003",
+      "name": "",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "53000",
+        "53001",
+        "50097",
+        "53003",
+        "530002"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/530003/"
+    },
+    {
+      "code": "530004",
+      "name": "",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "53000",
+        "53001",
+        "53003",
+        "530002",
+        "530003"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/530004/"
+    },
+    {
+      "code": "530031",
+      "name": "",
+      "category": "conditional-access",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "53003",
+        "530032",
+        "53000",
+        "53001"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/530031/"
     },
     {
       "code": "530032",
@@ -785,8 +1350,51 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/530032/"
+    },
+    {
+      "code": "650056",
+      "name": "",
+      "category": "consent",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "65001",
+        "90094",
+        "90095",
+        "65004",
+        "500011",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/650056/"
+    },
+    {
+      "code": "700003",
+      "name": "",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "135011",
+        "50097",
+        "53000",
+        "50173"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700003/"
     },
     {
       "code": "700016",
@@ -809,8 +1417,95 @@
       "status": "draft",
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
-      "updated": "2026-10-25",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/700016/"
+    },
+    {
+      "code": "700024",
+      "name": "",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7000215",
+        "7000222",
+        "7000218",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700024/"
+    },
+    {
+      "code": "700051",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700054",
+        "500113",
+        "50011",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700051/"
+    },
+    {
+      "code": "700054",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs"
+      ],
+      "related": [
+        "50011",
+        "700016",
+        "54005"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700054/"
+    },
+    {
+      "code": "700081",
+      "name": "",
+      "category": "token",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700082",
+        "70008",
+        "50058",
+        "9002327"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700081/"
     },
     {
       "code": "700082",
@@ -829,8 +1524,312 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-25",
       "url": "https://brambrinkmeier.com/entra/aadsts/700082/"
+    },
+    {
+      "code": "700211",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "70021",
+        "700212",
+        "700213",
+        "7002138",
+        "70025"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700211/"
+    },
+    {
+      "code": "700212",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "70021",
+        "700211",
+        "700213",
+        "7002138",
+        "70025"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700212/"
+    },
+    {
+      "code": "700213",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7002138",
+        "70021",
+        "700211",
+        "700212",
+        "70025"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700213/"
+    },
+    {
+      "code": "900023",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "90002",
+        "700016",
+        "900144",
+        "9002313"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/900023/"
+    },
+    {
+      "code": "900144",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs",
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "7000215",
+        "700016",
+        "50126"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-25",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/900144/"
+    },
+    {
+      "code": "900439",
+      "name": "USGClientNotSupportedOnPublicEndpoint",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "90002",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/900439/"
+    },
+    {
+      "code": "1002016",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7000218",
+        "700016",
+        "90002",
+        "9002313"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/1002016/"
+    },
+    {
+      "code": "1003031",
+      "name": "",
+      "category": "consent",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "650056",
+        "65001",
+        "90094",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/1003031/"
+    },
+    {
+      "code": "5000211",
+      "name": "",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "53003",
+        "90072",
+        "50020"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/5000211/"
+    },
+    {
+      "code": "5000225",
+      "name": "",
+      "category": "b2b-tenant",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "90002",
+        "700016",
+        "50034"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/5000225/"
+    },
+    {
+      "code": "5000611",
+      "name": "",
+      "category": "device",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50097",
+        "135011",
+        "700003",
+        "53000"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/5000611/"
+    },
+    {
+      "code": "5002730",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7000218",
+        "7000215",
+        "7000222",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/5002730/"
+    },
+    {
+      "code": "7000014",
+      "name": "",
+      "category": "token",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "9002313",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000014/"
+    },
+    {
+      "code": "7000110",
+      "name": "",
+      "category": "token",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700016",
+        "70008",
+        "700082",
+        "7000215"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000110/"
+    },
+    {
+      "code": "7000112",
+      "name": "UnauthorizedClientApplicationDisabled",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700016",
+        "500011",
+        "65001",
+        "7000215"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000112/"
     },
     {
       "code": "7000215",
@@ -852,8 +1851,29 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-11",
       "url": "https://brambrinkmeier.com/entra/aadsts/7000215/"
+    },
+    {
+      "code": "7000218",
+      "name": "",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7000215",
+        "7000222",
+        "700016",
+        "500011"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000218/"
     },
     {
       "code": "7000222",
@@ -872,8 +1892,154 @@
       ],
       "status": "draft",
       "verification": "documentation",
+      "inMicrosoftReference": true,
       "updated": "2026-10-24",
       "url": "https://brambrinkmeier.com/entra/aadsts/7000222/"
+    },
+    {
+      "code": "7002138",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "700213",
+        "70021",
+        "700211",
+        "700212",
+        "70025"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7002138/"
+    },
+    {
+      "code": "9002313",
+      "name": "InvalidRequest",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50011",
+        "7000215",
+        "500011",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9002313/"
+    },
+    {
+      "code": "9002326",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7000218",
+        "7000215",
+        "700016",
+        "9002313"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9002326/"
+    },
+    {
+      "code": "9002327",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "9002326",
+        "700054",
+        "9002313",
+        "7000218"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9002327/"
+    },
+    {
+      "code": "9002331",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "50020",
+        "700016",
+        "90002",
+        "9002313"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9002331/"
+    },
+    {
+      "code": "9002341",
+      "name": "",
+      "category": "consent",
+      "kind": "interrupt",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADNonInteractiveUserSignInLogs"
+      ],
+      "related": [
+        "65001",
+        "50058"
+      ],
+      "status": "draft",
+      "verification": "documentation",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9002341/"
+    },
+    {
+      "code": "9010010",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "500011",
+        "9002313",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9010010/"
     }
   ]
 }

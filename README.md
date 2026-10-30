@@ -28,8 +28,10 @@ An open dataset that classifies Microsoft Entra ID `AADSTS` sign-in error codes 
 | `tables` | Log Analytics tables where the code appears |
 | `related` | Codes that are usually read together with this one |
 | `status` | draft or verified (editorial status of the page) |
-| `verification` | documentation (based on Microsoft documentation), lab-reproduced (an automated lab run returned the code; sign-in log row and KQL not yet checked) or lab-verified |
+| `verification` | documentation (based on Microsoft documentation), lab-reproduced (a lab run returned the code; see `logCaptured` for whether the sign-in log row was read) or lab-verified |
 | `labReproduced` | Date of the lab reproduction, if any |
+| `inMicrosoftReference` | `false` when Microsoft's error code reference doesn't list the code (checked 30 Oct 2026); those pages use lab results, other Microsoft pages or user reports |
+| `logCaptured` | Date a lab sign-in log row was read for the code, if any |
 | `updated` | Last review date |
 | `url` | Page with the full explanation, attack patterns and KQL |
 
@@ -38,7 +40,7 @@ Only the author's own classification is included. Microsoft's error descriptions
 ## Use in KQL
 
 ```kusto
-let aadsts = externaldata(code:string, name:string, category:string, kind:string, attackSignal:string, mitre:string, tables:string, related:string, status:string, verification:string, labReproduced:string, updated:string, url:string)
+let aadsts = externaldata(code:string, name:string, category:string, kind:string, attackSignal:string, mitre:string, tables:string, related:string, status:string, verification:string, labReproduced:string, updated:string, url:string, inMicrosoftReference:bool, logCaptured:string)
   [@"https://raw.githubusercontent.com/GrantZero604/aadsts-dataset/main/aadsts.csv"]
   with (format="csv", ignoreFirstRecord=true);
 SigninLogs
@@ -49,7 +51,7 @@ SigninLogs
 
 ## Cite
 
-Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo; this is the DOI of version 1.0.0), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 36 codes; `verification` shows which codes were reproduced in a lab tenant.
+Cite via DOI [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386) (Zenodo; this is the DOI of version 1.0.0), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has 90 codes, 39 of them missing from Microsoft's error reference; `verification` shows which codes were reproduced in a lab tenant.
 
 ## License
 
