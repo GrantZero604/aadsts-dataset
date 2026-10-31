@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
-title: "AADSTS sign-in error codes: attack signal, MITRE technique and category"
+title: "AADSTS and Microsoft Graph error codes: attack signal, MITRE technique and category, with the lab that produced them"
 type: dataset
 doi: "10.5281/zenodo.23641385"
 authors:

@@ -1,7 +1,7 @@
 {
-  "title": "AADSTS sign-in error codes: attack signal, MITRE technique and category",
+  "title": "AADSTS and Microsoft Graph error codes: attack signal, MITRE technique and category, with the lab that produced them",
   "upload_type": "dataset",
-  "description": "Open dataset classifying Microsoft Entra ID AADSTS sign-in error codes for security triage: kind (failure, interrupt, config), attack-signal rating, related MITRE ATT&CK techniques, sign-in log tables and related codes. Version 1.1.0 has 90 codes, 39 of them missing from Microsoft's error code reference (field inMicrosoftReference), and marks which codes were reproduced in a lab tenant and which have a captured sign-in log row. Full explanations and KQL at https://brambrinkmeier.com/entra/aadsts/",
+  "description": "Open dataset classifying Microsoft Entra ID AADSTS sign-in error codes for security triage: kind (failure, interrupt, config), attack-signal rating, related MITRE ATT&CK techniques, sign-in log tables and related codes. Version 1.2.0 has 98 AADSTS codes, 43 of them missing from Microsoft's error code reference (field inMicrosoftReference), and marks which were reproduced in a lab tenant (34), which have a captured sign-in log row (16) and which had the page's KQL run against those rows (11). New in 1.2.0: a second dataset of 8 named Microsoft Graph error codes, each with the exact message the live service returned, which exists because Microsoft publishes no current reference for them - its Graph error page lists HTTP statuses and names no codes, and most named codes survive only on a retired 2016 Azure AD Graph page. Also new: lab/ contains the reproduction scripts, the GitHub Actions workflows that run them and the raw output of every run, so the lab-reproduced rows can be checked or re-run rather than taken on trust. Full explanations and KQL at https://brambrinkmeier.com/entra/aadsts/ and https://brambrinkmeier.com/entra/graph/",
   "creators": [
     {
       "name": "Brinkmeier, Bram"
@@ -11,6 +11,8 @@
   "keywords": [
     "AADSTS",
     "Microsoft Entra ID",
+    "Microsoft Graph",
+    "error codes",
     "sign-in logs",
     "KQL",
     "Microsoft Sentinel",
@@ -22,7 +24,17 @@
       "identifier": "https://brambrinkmeier.com/aadsts-kql-lookup/",
       "relation": "isDocumentedBy",
       "resource_type": "publication-other"
+    },
+    {
+      "identifier": "https://brambrinkmeier.com/entra/graph/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    },
+    {
+      "identifier": "https://brambrinkmeier.com/methodology/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
     }
   ],
-  "version": "1.1.0"
+  "version": "1.2.0"
 }
