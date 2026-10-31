@@ -1,0 +1,124 @@
+{
+  "name": "Microsoft Graph error codes, as returned by the live service",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Bram Brinkmeier, https://brambrinkmeier.com/ (Graph error codes: https://brambrinkmeier.com/entra/graph/)",
+  "generated": "2026-10-31",
+  "count": 8,
+  "note": "Message strings are Microsoft Graph HTTP responses recorded in a lab tenant, quoted as returned. Microsoft publishes no current named-error-code reference for Graph; see /entra/graph/ for where each code is documented, if anywhere.",
+  "method": "https://brambrinkmeier.com/methodology/",
+  "codes": [
+    {
+      "code": "AccessDenied",
+      "httpStatus": "403",
+      "category": "permissions",
+      "attackSignal": "medium",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "GET /identity/conditionalAccess/policies without Policy.Read.All",
+        "message": "You cannot perform the requested operation, required scopes are missing in the token."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/accessdenied/"
+    },
+    {
+      "code": "Authentication_MSGraphPermissionMissing",
+      "httpStatus": "403",
+      "category": "permissions",
+      "attackSignal": "medium",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "GET /auditLogs/signIns without AuditLog.Read.All",
+        "message": "The principal does not have any one of the required Microsoft Graph permissions: AuditLog.Read.All to call this API. For more information about Microsoft Graph permissions, please visit https://learn.microsoft.com/graph/permissions-overview."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/authentication-msgraphpermissionmissing/"
+    },
+    {
+      "code": "Authorization_RequestDenied",
+      "httpStatus": "403",
+      "category": "permissions",
+      "attackSignal": "medium",
+      "inMicrosoftGraphDocs": true,
+      "checked": null,
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "POST /groups without Group.ReadWrite.All",
+        "message": "Insufficient privileges to complete the operation."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/authorization-requestdenied/"
+    },
+    {
+      "code": "BadRequest",
+      "httpStatus": "400",
+      "category": "request",
+      "attackSignal": "low",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "An unknown top-level path and a malformed JSON body",
+        "message": "Resource not found for the segment 'notAResource'."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/badrequest/"
+    },
+    {
+      "code": "InvalidAuthenticationToken",
+      "httpStatus": "401",
+      "category": "token",
+      "attackSignal": "low",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "Six different bad tokens against GET /users",
+        "message": "Access token validation failure. Invalid audience."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/invalidauthenticationtoken/"
+    },
+    {
+      "code": "Request_BadRequest",
+      "httpStatus": "400",
+      "category": "request",
+      "attackSignal": "low",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "Creating users with a missing password and a duplicate UPN, and DELETE on a collection",
+        "message": "Another object with the same value for property userPrincipalName already exists."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/request-badrequest/"
+    },
+    {
+      "code": "Request_ResourceNotFound",
+      "httpStatus": "404",
+      "category": "request",
+      "attackSignal": "low",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "GET and DELETE on object IDs that belong to no object",
+        "message": "Resource 'not-a-guid' does not exist or one of its queried reference-property objects are not present."
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/request-resourcenotfound/"
+    },
+    {
+      "code": "Request_UnsupportedQuery",
+      "httpStatus": "400",
+      "category": "query",
+      "attackSignal": "low",
+      "inMicrosoftGraphDocs": false,
+      "checked": "2026-10-31",
+      "labReproduced": {
+        "date": "2026-10-31",
+        "scenario": "Eight query shapes against GET /users",
+        "message": "Operator 'endsWith' is not supported because the 'ConsistencyLevel:eventual' header is missing. Refer to https://aka.ms/graph-docs/advanced-queries for more information"
+      },
+      "url": "https://brambrinkmeier.com/entra/graph/request-unsupportedquery/"
+    }
+  ]
+}

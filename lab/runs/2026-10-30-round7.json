@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-30",
+  "run": "round 7",
+  "method": "token-endpoint requests against a lab tenant",
+  "workflow": ".github/workflows/lab-error-codes.yml",
+  "issue": "https://github.com/GrantZero604/Brambrinkmeier.com/issues/71",
+  "note": "message is the first line of error_description as recorded in the issue.",
+  "results": [
+    {
+      "scenario": "User does not exist",
+      "expected": "50034",
+      "got": "50034",
+      "message": "AADSTS50034: The user account {EUII Hidden} does not exist in the 905b9584-9c20-43bd-991e-e910a3f1dbfa directory. To sign into this application, the account mus"
+    },
+    {
+      "scenario": "Wrong password",
+      "expected": "50126",
+      "got": "50126",
+      "message": "AADSTS50126: Error validating credentials due to invalid username or password."
+    },
+    {
+      "scenario": "Account disabled",
+      "expected": "50057",
+      "got": "50057",
+      "message": "AADSTS50057: The user account is disabled."
+    },
+    {
+      "scenario": "Must change password at next sign-in",
+      "expected": "50055 / 50144 / 50173",
+      "got": "50055",
+      "message": "AADSTS50055: The password is expired."
+    },
+    {
+      "scenario": "Correct password (security defaults / MFA / consent decide)",
+      "expected": "success / 50076 / 50079 / 65001 / 50072",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "Unknown client ID",
+      "expected": "700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier 'e932e408-0b07-43b9-9af1-ed91d3b86d7e' was not found in the directory '905b9584-9c20-43bd-991e-e910a3f1dbfa'. This can"
+    },
+    {
+      "scenario": "Resource does not exist in tenant",
+      "expected": "500011",
+      "got": "500011",
+      "message": "AADSTS500011: The resource principal named https://does-not-exist.brambrinkmeier.com was not found in the tenant named 905b9584-9c20-43bd-991e-e910a3f1dbfa. Thi"
+    },
+    {
+      "scenario": "Tenant does not exist",
+      "expected": "90002",
+      "got": "90002",
+      "message": "AADSTS90002: Tenant 'e2d9293e-0891-425a-a783-72f94ae23450' not found. Check to make sure you have the correct tenant ID and are signing into the correct cloud. "
+    },
+    {
+      "scenario": "Password parameter missing",
+      "expected": "900144",
+      "got": "900144",
+      "message": "AADSTS900144: The request body must contain the following parameter: 'password'."
+    },
+    {
+      "scenario": "Token request with a browser Origin header from a non-SPA client",
+      "expected": "9002326",
+      "got": "9002326",
+      "message": "AADSTS9002326: Cross-origin token redemption is permitted only for the 'Single-Page Application' client-type. Request origin: 'https://lab.brambrinkmeier.com'."
+    },
+    {
+      "scenario": "Malformed tenant identifier",
+      "expected": "900023",
+      "got": "900023",
+      "message": "AADSTS900023: Specified tenant identifier 'not_a_valid~tenant' is neither a valid DNS name, nor a valid external domain."
+    },
+    {
+      "scenario": "Password longer than 256 characters",
+      "expected": "50052",
+      "got": "50052",
+      "message": "AADSTS50052: The password entered exceeds the maximum length. Please reach out to your admin to reset the password."
+    },
+    {
+      "scenario": "Deleted user signs in",
+      "expected": "500341 / 50034",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "Device code that was never issued",
+      "expected": "70020 / 70000 / 9002313",
+      "got": "7000014",
+      "message": "AADSTS7000014: The provided value for the input parameter 'device_code' is not valid."
+    },
+    {
+      "scenario": "Device code requested on /consumers by a work-account app",
+      "expected": "90133 / 9002331 / 700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier '18e88a5a-6bed-4382-9565-a0cae44454eb' was not found in the directory '9188040d-6c67-4c5b-b112-36a304b66dad'. This can"
+    },
+    {
+      "scenario": "Both scope and resource sent",
+      "expected": "9010010",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "Confidential client sends no credential",
+      "expected": "7000218",
+      "got": "7000216",
+      "message": "AADSTS7000216: 'client_assertion', 'client_secret' or 'request' is required for the 'client_credentials' grant type."
+    },
+    {
+      "scenario": "Client assertion that is not a JWT",
+      "expected": "9002313 / 50027 / 700027",
+      "got": "50027",
+      "message": "AADSTS50027: JWT token is invalid or malformed."
+    },
+    {
+      "scenario": "Unknown client_assertion_type",
+      "expected": "9002313 / 700027",
+      "got": "90023",
+      "message": "AADSTS90023: Unexpected client assertion type."
+    },
+    {
+      "scenario": "Device code on /common by a single-tenant app",
+      "expected": "90133 / 700016 / 50194",
+      "got": "50059",
+      "message": "AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials."
+    },
+    {
+      "scenario": "Device code on /organizations by a single-tenant app",
+      "expected": "90133 / 700016 / 50194",
+      "got": "50059",
+      "message": "AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials."
+    },
+    {
+      "scenario": "Repeated wrong passwords (smart lockout)",
+      "expected": "50053",
+      "got": "50053",
+      "message": "AADSTS50053: The account is locked, you've tried to sign in too many times with an incorrect user ID or password."
+    },
+    {
+      "scenario": "Token request over TLS 1.0",
+      "expected": "1002016",
+      "got": null,
+      "message": "no response: ECONNRESET"
+    },
+    {
+      "scenario": "Client assertion expired",
+      "expected": "700024",
+      "got": "700024",
+      "message": "AADSTS700024: Client assertion is not within its valid time range. Current time: 2026-10-30T23:33:21.4471912Z, assertion valid from 2026-10-30T23:17:21.0000000Z"
+    },
+    {
+      "scenario": "Refresh token before revocation (control)",
+      "expected": "success",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "Refresh token after the admin revoked sessions",
+      "expected": "50173 / 700082 / 50076",
+      "got": "50173",
+      "message": "AADSTS50173: The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The gran"
+    },
+    {
+      "scenario": "Federated credential: no credential configured at all",
+      "expected": "70025",
+      "got": "70025",
+      "message": "AADSTS70025: The client 'fbae4a6f-dcf3-4634-b9db-f9d782a84a09'(lab-fic-target-41143330001) has no configured federated identity credentials."
+    },
+    {
+      "scenario": "Federated credential matches",
+      "expected": "success",
+      "got": "700226",
+      "message": "AADSTS700226: Only MSI tokens may be used as Federated Identity Credentials for AAD issuer."
+    },
+    {
+      "scenario": "Federated credential: subject does not match",
+      "expected": "700213 / 70021",
+      "got": "700213",
+      "message": "AADSTS700213: No matching federated identity record found for presented assertion subject '4b1308b6-90a8-4c71-92a1-890b6811627d'. Check your federated identity "
+    },
+    {
+      "scenario": "Federated credential: issuer does not match",
+      "expected": "700211 / 70021",
+      "got": "700211",
+      "message": "AADSTS700211: No matching federated identity record found for presented assertion issuer 'https://login.microsoftonline.com/905b9584-9c20-43bd-991e-e910a3f1dbfa"
+    },
+    {
+      "scenario": "Federated credential: audience does not match",
+      "expected": "700212 / 700213 / 70021",
+      "got": "7002121",
+      "message": "AADSTS7002121: No matching federated identity record found for presented assertion audience 'fb60f99c-7a34-4190-8149-302f77469936'. The Audience for the federat"
+    },
+    {
+      "scenario": "Federated credential: subject differs only by case",
+      "expected": "7002138 / 700213",
+      "got": "7002138",
+      "message": "AADSTS7002138: No matching federated identity record found for presented assertion subject '4b1308b6-90a8-4c71-92a1-890b6811627d'. The subject matches with case"
+    },
+    {
+      "scenario": "Wrong client secret",
+      "expected": "7000215",
+      "got": "7000215",
+      "message": "AADSTS7000215: Invalid client secret provided. Ensure the secret being sent in the request is the client secret value, not the client secret ID, for a secret ad"
+    },
+    {
+      "scenario": "Confidential client does ROPC without a secret",
+      "expected": "7000218",
+      "got": "7000218",
+      "message": "AADSTS7000218: The request body must contain the following parameter: 'client_assertion' or 'client_secret'."
+    },
+    {
+      "scenario": "Correct client secret (control)",
+      "expected": "success",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "SPA-registered client redeems without an Origin header",
+      "expected": "9002327 / 65001",
+      "got": "65001",
+      "message": "AADSTS65001: The user or administrator has not consented to use the application with ID 'fa3ae09b-61ca-42f2-9a8f-0a9555d2439c' named 'lab-spa-41143330001'. Send"
+    },
+    {
+      "scenario": "Personal-accounts-only app on a tenant endpoint",
+      "expected": "9002331",
+      "got": "9002346",
+      "message": "AADSTS9002346: Application '5fd73f42-69b8-4ecb-9e11-815463e86eca'(lab-msa-only-41143330001) is configured for use by Microsoft Account users only. Please use th"
+    },
+    {
+      "scenario": "Application disabled for sign-in",
+      "expected": "7000112",
+      "got": "7000112",
+      "message": "AADSTS7000112: Application '25f7ff4f-2ab6-4f42-832c-54e80581968c'(lab-disabled-sp-41143330001) is disabled."
+    },
+    {
+      "scenario": "App-only token for an API that requires assignment",
+      "expected": "501051",
+      "got": "501051",
+      "message": "AADSTS501051: Application '73e0de8c-1258-4195-b91e-d3b2083afc51'(lab-fic-holder-41143330001) is not assigned to a role for the application 'api://3ec52a84-28ec-"
+    },
+    {
+      "scenario": "Deleted user signs in, about 12 minutes after deletion",
+      "expected": "500341 / 50034",
+      "got": "50034",
+      "message": "AADSTS50034: The user account {EUII Hidden} does not exist in the 905b9584-9c20-43bd-991e-e910a3f1dbfa directory. To sign into this application, the account mus"
+    }
+  ]
+}

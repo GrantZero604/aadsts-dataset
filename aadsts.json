@@ -3,8 +3,8 @@
   "license": "CC BY 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Bram Brinkmeier, https://brambrinkmeier.com/ (AADSTS code map: https://brambrinkmeier.com/entra/aadsts/)",
-  "generated": "2026-10-30",
-  "count": 90,
+  "generated": "2026-10-31",
+  "count": 98,
   "note": "Only this site's own classification fields are included. Microsoft's error descriptions are not included; see Microsoft's error code reference: https://learn.microsoft.com/en-us/entra/identity-platform/reference-error-codes",
   "codes": [
     {
@@ -78,6 +78,30 @@
       "url": "https://brambrinkmeier.com/entra/aadsts/50020/"
     },
     {
+      "code": "50027",
+      "name": "InvalidJwtToken",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "medium",
+      "mitre": [],
+      "tables": [
+        "SigninLogs",
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "90023",
+        "700024",
+        "7000216",
+        "7000218"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50027/"
+    },
+    {
       "code": "50034",
       "name": "UserAccountNotFound",
       "category": "credentials",
@@ -122,6 +146,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-30",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50052/"
@@ -148,9 +173,11 @@
         "530032"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-31",
       "inMicrosoftReference": true,
-      "updated": "2026-10-11",
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50053/"
     },
     {
@@ -197,6 +224,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50055/"
@@ -226,6 +254,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50057/"
@@ -251,6 +280,27 @@
       "inMicrosoftReference": true,
       "updated": "2026-10-24",
       "url": "https://brambrinkmeier.com/entra/aadsts/50058/"
+    },
+    {
+      "code": "50059",
+      "name": "MissingTenantRealmAndNoUserInformationProvided",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "90002",
+        "900023",
+        "50020",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/50059/"
     },
     {
       "code": "50072",
@@ -481,6 +531,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50126/"
@@ -604,9 +655,10 @@
         "50057"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
       "inMicrosoftReference": true,
-      "updated": "2026-10-25",
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/50173/"
     },
     {
@@ -810,6 +862,27 @@
       "url": "https://brambrinkmeier.com/entra/aadsts/70008/"
     },
     {
+      "code": "70016",
+      "name": "AuthorizationPending",
+      "category": "token",
+      "kind": "interrupt",
+      "attackSignal": "medium",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "7000014",
+        "90023",
+        "50059",
+        "90133"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-31",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-31",
+      "url": "https://brambrinkmeier.com/entra/aadsts/70016/"
+    },
+    {
       "code": "70021",
       "name": "",
       "category": "app-config",
@@ -848,7 +921,8 @@
         "700016"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/70025/"
@@ -938,6 +1012,31 @@
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/90002/"
+    },
+    {
+      "code": "90023",
+      "name": "InvalidRequest",
+      "category": "credentials",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "50027",
+        "700024",
+        "7000216",
+        "7000218",
+        "70016",
+        "7000014"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": true,
+      "updated": "2026-10-31",
+      "url": "https://brambrinkmeier.com/entra/aadsts/90023/"
     },
     {
       "code": "90072",
@@ -1092,6 +1191,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/500011/"
@@ -1134,6 +1234,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-30",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/500113/"
@@ -1418,6 +1519,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-25",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/700016/"
@@ -1440,6 +1542,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-30",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/700024/"
@@ -1462,6 +1565,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-30",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/700051/"
@@ -1544,7 +1648,8 @@
         "70025"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/700211/"
@@ -1558,6 +1663,7 @@
       "mitre": [],
       "tables": [],
       "related": [
+        "7002121",
         "70021",
         "700211",
         "700213",
@@ -1586,10 +1692,35 @@
         "70025"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/700213/"
+    },
+    {
+      "code": "700226",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "70025",
+        "700211",
+        "700213",
+        "7002121",
+        "700212"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/700226/"
     },
     {
       "code": "900023",
@@ -1826,7 +1957,9 @@
         "7000215"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-31",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/7000112/"
@@ -1850,10 +1983,34 @@
         "65001"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
       "inMicrosoftReference": true,
-      "updated": "2026-10-11",
+      "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/7000215/"
+    },
+    {
+      "code": "7000216",
+      "name": "",
+      "category": "app-config",
+      "kind": "failure",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "7000218",
+        "7000215",
+        "7000222",
+        "700016"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7000216/"
     },
     {
       "code": "7000218",
@@ -1870,7 +2027,9 @@
         "500011"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-31",
       "inMicrosoftReference": true,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/7000218/"
@@ -1897,6 +2056,30 @@
       "url": "https://brambrinkmeier.com/entra/aadsts/7000222/"
     },
     {
+      "code": "7002121",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [
+        "AADServicePrincipalSignInLogs"
+      ],
+      "related": [
+        "700212",
+        "700211",
+        "700213",
+        "7002138",
+        "70025"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/7002121/"
+    },
+    {
       "code": "7002138",
       "name": "",
       "category": "app-config",
@@ -1912,7 +2095,8 @@
         "70025"
       ],
       "status": "draft",
-      "verification": "documentation",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/7002138/"
@@ -1955,6 +2139,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-30",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/9002326/"
@@ -2021,6 +2206,28 @@
       "url": "https://brambrinkmeier.com/entra/aadsts/9002341/"
     },
     {
+      "code": "9002346",
+      "name": "",
+      "category": "app-config",
+      "kind": "config",
+      "attackSignal": "low",
+      "mitre": [],
+      "tables": [],
+      "related": [
+        "9002331",
+        "50020",
+        "700016",
+        "90002"
+      ],
+      "status": "draft",
+      "verification": "lab-reproduced",
+      "labReproduced": "2026-10-30",
+      "logCaptured": "2026-10-31",
+      "inMicrosoftReference": false,
+      "updated": "2026-10-30",
+      "url": "https://brambrinkmeier.com/entra/aadsts/9002346/"
+    },
+    {
       "code": "9010010",
       "name": "",
       "category": "app-config",
@@ -2037,6 +2244,7 @@
       "verification": "lab-reproduced",
       "labReproduced": "2026-10-30",
       "logCaptured": "2026-10-30",
+      "kqlTested": "2026-10-30",
       "inMicrosoftReference": false,
       "updated": "2026-10-30",
       "url": "https://brambrinkmeier.com/entra/aadsts/9010010/"

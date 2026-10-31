@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-30",
+  "run": "round 5 (first attempt)",
+  "method": "token-endpoint requests against a lab tenant",
+  "issue": "https://github.com/GrantZero604/Brambrinkmeier.com/issues/68",
+  "note": "App-based scenarios failed on a Graph replication delay; rerun followed.",
+  "results": [
+    {
+      "scenario": "User does not exist",
+      "expected": "50034",
+      "got": "50034",
+      "message": "AADSTS50034: The user account {EUII Hidden} does not exist in the 905b9584-9c20-43bd-991e-e910a3f1dbfa directory. To sign into this application, the account mus"
+    },
+    {
+      "scenario": "Wrong password",
+      "expected": "50126",
+      "got": "50126",
+      "message": "AADSTS50126: Error validating credentials due to invalid username or password."
+    },
+    {
+      "scenario": "Account disabled",
+      "expected": "50057",
+      "got": "50057",
+      "message": "AADSTS50057: The user account is disabled."
+    },
+    {
+      "scenario": "Must change password at next sign-in",
+      "expected": "50055 / 50144 / 50173",
+      "got": "50055",
+      "message": "AADSTS50055: The password is expired."
+    },
+    {
+      "scenario": "Correct password (security defaults / MFA / consent decide)",
+      "expected": "success / 50076 / 50079 / 65001 / 50072",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "Unknown client ID",
+      "expected": "700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier '9fa36668-b1b0-44e4-b1d0-d24f21d6cda8' was not found in the directory '905b9584-9c20-43bd-991e-e910a3f1dbfa'. This can"
+    },
+    {
+      "scenario": "Resource does not exist in tenant",
+      "expected": "500011",
+      "got": "500011",
+      "message": "AADSTS500011: The resource principal named https://does-not-exist.brambrinkmeier.com was not found in the tenant named 905b9584-9c20-43bd-991e-e910a3f1dbfa. Thi"
+    },
+    {
+      "scenario": "Tenant does not exist",
+      "expected": "90002",
+      "got": "90002",
+      "message": "AADSTS90002: Tenant '2c3945ae-ca38-4f8a-9c8f-b42bc091210e' not found. Check to make sure you have the correct tenant ID and are signing into the correct cloud. "
+    },
+    {
+      "scenario": "Password parameter missing",
+      "expected": "900144",
+      "got": "900144",
+      "message": "AADSTS900144: The request body must contain the following parameter: 'password'."
+    },
+    {
+      "scenario": "Token request with a browser Origin header from a non-SPA client",
+      "expected": "9002326",
+      "got": "9002326",
+      "message": "AADSTS9002326: Cross-origin token redemption is permitted only for the 'Single-Page Application' client-type. Request origin: 'https://lab.brambrinkmeier.com'."
+    },
+    {
+      "scenario": "Malformed tenant identifier",
+      "expected": "900023",
+      "got": "900023",
+      "message": "AADSTS900023: Specified tenant identifier 'not_a_valid~tenant' is neither a valid DNS name, nor a valid external domain."
+    },
+    {
+      "scenario": "Password longer than 256 characters",
+      "expected": "50052",
+      "got": "50052",
+      "message": "AADSTS50052: The password entered exceeds the maximum length. Please reach out to your admin to reset the password."
+    },
+    {
+      "scenario": "Deleted user signs in",
+      "expected": "500341 / 50034",
+      "got": "success",
+      "message": ""
+    },
+    {
+      "scenario": "Device code that was never issued",
+      "expected": "70020 / 70000 / 9002313",
+      "got": "7000014",
+      "message": "AADSTS7000014: The provided value for the input parameter 'device_code' is not valid."
+    },
+    {
+      "scenario": "Device code requested on /consumers by a work-account app",
+      "expected": "90133 / 9002331 / 700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier '18e88a5a-6bed-4382-9565-a0cae44454eb' was not found in the directory '9188040d-6c67-4c5b-b112-36a304b66dad'. This can"
+    },
+    {
+      "scenario": "Both scope and resource sent",
+      "expected": "9010010",
+      "got": "9010010",
+      "message": "AADSTS9010010: The resource parameter provided in the request doesn't match with the requested scopes."
+    },
+    {
+      "scenario": "Confidential client sends no credential",
+      "expected": "7000218",
+      "got": "7000216",
+      "message": "AADSTS7000216: 'client_assertion', 'client_secret' or 'request' is required for the 'client_credentials' grant type."
+    },
+    {
+      "scenario": "Client assertion that is not a JWT",
+      "expected": "9002313 / 50027 / 700027",
+      "got": "50027",
+      "message": "AADSTS50027: JWT token is invalid or malformed."
+    },
+    {
+      "scenario": "Unknown client_assertion_type",
+      "expected": "9002313 / 700027",
+      "got": "90023",
+      "message": "AADSTS90023: Unexpected client assertion type."
+    },
+    {
+      "scenario": "Device code on /common by a single-tenant app",
+      "expected": "90133 / 700016 / 50194",
+      "got": "50059",
+      "message": "AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials."
+    },
+    {
+      "scenario": "Device code on /organizations by a single-tenant app",
+      "expected": "90133 / 700016 / 50194",
+      "got": "50059",
+      "message": "AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials."
+    },
+    {
+      "scenario": "Repeated wrong passwords (smart lockout)",
+      "expected": "50053",
+      "got": "50053",
+      "message": "AADSTS50053: The account is locked, you've tried to sign in too many times with an incorrect user ID or password."
+    },
+    {
+      "scenario": "Token request over TLS 1.0",
+      "expected": "1002016",
+      "got": null,
+      "message": "no response: ECONNRESET"
+    },
+    {
+      "scenario": "Client assertion expired",
+      "expected": "700024",
+      "got": "700024",
+      "message": "AADSTS700024: Client assertion is not within its valid time range. Current time: 2026-10-30T22:11:38.3450502Z, assertion valid from 2026-10-30T21:55:38.0000000Z"
+    },
+    {
+      "scenario": "App-based scenarios (round 5)",
+      "expected": "several",
+      "got": "error",
+      "message": "Graph POST /applications/277c58ec-1824-4c86-a96c-9d42bcc053ea/addPassword: HTTP 404 {\"error\":{\"code\":\"Request_ResourceNotFound\",\"message\":\"Resource '277c58ec-18"
+    },
+    {
+      "scenario": "Deleted user signs in, about 12 minutes after deletion",
+      "expected": "500341 / 50034",
+      "got": "50034",
+      "message": "AADSTS50034: The user account {EUII Hidden} does not exist in the 905b9584-9c20-43bd-991e-e910a3f1dbfa directory. To sign into this application, the account mus"
+    }
+  ]
+}

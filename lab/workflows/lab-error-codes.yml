@@ -1,0 +1,52 @@
+# Manual (and monthly): reproduce AADSTS error codes in the lab tenant and open an issue with the
+# codes Microsoft actually returned. Auth via GitHub OIDC federated credential (no secrets).
+# Test users get random one-time passwords inside the runner and are deleted at the end.
+name: Lab error codes
+on:
+  workflow_dispatch:
+    inputs:
+      slow:
+        description: 'Include the slow scenarios that are already reproduced'
+        type: boolean
+        default: false
+  schedule:
+    - cron: '23 5 2 * *'
+
+permissions:
+  id-token: write
+  contents: read
+  issues: write
+
+concurrency: lab-error-codes
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 45
+    env:
+      # Identifiers of the lab tenant and its apps, not secrets.
+      LAB_TENANT_ID: 905b9584-9c20-43bd-991e-e910a3f1dbfa
+      LAB_DOMAIN: brambrambrinkmeier.onmicrosoft.com
+      LAB_RUNNER_CLIENT_ID: dc923687-81e4-4216-8f93-debdd99c2607
+      LAB_SIGNIN_CLIENT_ID: 18e88a5a-6bed-4382-9565-a0cae44454eb
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Reproduce error codes
+        env:
+          RUN_SLOW: ${{ inputs.slow && '1' || '0' }}
+        run: node scripts/lab/error-codes.mjs
+      - name: Keep the results
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab-results
+          path: lab-results.json
+      - name: Open an issue with the results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create lab-run --color 5319E7 --description "Lab tenant reproduction results" --force
+          gh issue create --label lab-run --title "Lab run $(date +%Y-%m-%d): AADSTS codes" --body-file lab-results.md

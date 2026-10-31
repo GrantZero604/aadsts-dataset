@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-25",
+  "method": "ROPC token request against a lab tenant",
+  "workflow": ".github/workflows/lab-error-codes.yml",
+  "issue": "https://github.com/GrantZero604/Brambrinkmeier.com/issues/38",
+  "note": "message is the first line of error_description as recorded in the issue, which cuts it at about 160 characters.",
+  "results": [
+    {
+      "scenario": "User does not exist",
+      "expected": "50034",
+      "got": "50034",
+      "message": "AADSTS50034: The user account {EUII Hidden} does not exist in the 905b9584-9c20-43bd-991e-e910a3f1dbfa directory. To sign into this application, the account mus"
+    },
+    {
+      "scenario": "Wrong password",
+      "expected": "50126",
+      "got": "50126",
+      "message": "AADSTS50126: Error validating credentials due to invalid username or password."
+    },
+    {
+      "scenario": "Account disabled",
+      "expected": "50057",
+      "got": "50057",
+      "message": "AADSTS50057: The user account is disabled."
+    },
+    {
+      "scenario": "Must change password at next sign-in",
+      "expected": "50055 / 50144 / 50173",
+      "got": "50055",
+      "message": "AADSTS50055: The password is expired."
+    },
+    {
+      "scenario": "Correct password (security defaults / MFA / consent decide)",
+      "expected": "success / 50076 / 50079 / 65001 / 50072",
+      "got": "65001",
+      "message": "AADSTS65001: The user or administrator has not consented to use the application with ID '18e88a5a-6bed-4382-9565-a0cae44454eb' named 'lab-signin-client'. Send a"
+    },
+    {
+      "scenario": "Unknown client ID",
+      "expected": "700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier 'c009ca88-a24a-46d5-bc15-6216c91df13e' was not found in the directory '905b9584-9c20-43bd-991e-e910a3f1dbfa'. This can"
+    },
+    {
+      "scenario": "Resource does not exist in tenant",
+      "expected": "500011",
+      "got": "500011",
+      "message": "AADSTS500011: The resource principal named https://does-not-exist.brambrinkmeier.com was not found in the tenant named 905b9584-9c20-43bd-991e-e910a3f1dbfa. Thi"
+    },
+    {
+      "scenario": "Tenant does not exist",
+      "expected": "90002",
+      "got": "90002",
+      "message": "AADSTS90002: Tenant '1110ef06-0ed7-4801-b4e3-6a312adde9e2' not found. Check to make sure you have the correct tenant ID and are signing into the correct cloud."
+    },
+    {
+      "scenario": "Password parameter missing",
+      "expected": "900144",
+      "got": "900144",
+      "message": "AADSTS900144: The request body must contain the following parameter: 'password'."
+    }
+  ]
+}

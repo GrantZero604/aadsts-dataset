@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-30",
+  "method": "ROPC and other token-endpoint requests against a lab tenant",
+  "workflow": ".github/workflows/lab-error-codes.yml",
+  "issue": "https://github.com/GrantZero604/Brambrinkmeier.com/issues/66",
+  "note": "message is the first line of error_description as recorded in the issue, which cuts it at about 160 characters. The two browser entries were reproduced by hand: an unauthenticated GET to the authorize endpoint in a private browser window, error text read from the page.",
+  "results": [
+    {
+      "scenario": "User does not exist",
+      "expected": "50034",
+      "got": "50034",
+      "message": "AADSTS50034: The user account {EUII Hidden} does not exist in the 905b9584-9c20-43bd-991e-e910a3f1dbfa directory. To sign into this application, the account mus"
+    },
+    {
+      "scenario": "Wrong password",
+      "expected": "50126",
+      "got": "50126",
+      "message": "AADSTS50126: Error validating credentials due to invalid username or password."
+    },
+    {
+      "scenario": "Account disabled",
+      "expected": "50057",
+      "got": "50057",
+      "message": "AADSTS50057: The user account is disabled."
+    },
+    {
+      "scenario": "Must change password at next sign-in",
+      "expected": "50055 / 50144 / 50173",
+      "got": "50055",
+      "message": "AADSTS50055: The password is expired."
+    },
+    {
+      "scenario": "Correct password (security defaults / MFA / consent decide)",
+      "expected": "success / 50076 / 50079 / 65001 / 50072",
+      "got": "65001",
+      "message": "AADSTS65001: The user or administrator has not consented to use the application with ID '18e88a5a-6bed-4382-9565-a0cae44454eb' named 'lab-signin-client'. Send a"
+    },
+    {
+      "scenario": "Unknown client ID",
+      "expected": "700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier '5c3c5d54-eda0-41db-8e90-92118942fa04' was not found in the directory '905b9584-9c20-43bd-991e-e910a3f1dbfa'. This can"
+    },
+    {
+      "scenario": "Resource does not exist in tenant",
+      "expected": "500011",
+      "got": "500011",
+      "message": "AADSTS500011: The resource principal named https://does-not-exist.brambrinkmeier.com was not found in the tenant named 905b9584-9c20-43bd-991e-e910a3f1dbfa. Thi"
+    },
+    {
+      "scenario": "Tenant does not exist",
+      "expected": "90002",
+      "got": "90002",
+      "message": "AADSTS90002: Tenant '17874a56-f7d3-48ef-a777-fea21b68cad5' not found. Check to make sure you have the correct tenant ID and are signing into the correct cloud. "
+    },
+    {
+      "scenario": "Password parameter missing",
+      "expected": "900144",
+      "got": "900144",
+      "message": "AADSTS900144: The request body must contain the following parameter: 'password'."
+    },
+    {
+      "scenario": "Token request with a browser Origin header from a non-SPA client",
+      "expected": "9002326",
+      "got": "9002326",
+      "message": "AADSTS9002326: Cross-origin token redemption is permitted only for the 'Single-Page Application' client-type. Request origin: 'https://lab.brambrinkmeier.com'."
+    },
+    {
+      "scenario": "Malformed tenant identifier",
+      "expected": "900023",
+      "got": "900023",
+      "message": "AADSTS900023: Specified tenant identifier 'not_a_valid~tenant' is neither a valid DNS name, nor a valid external domain."
+    },
+    {
+      "scenario": "Password longer than 256 characters",
+      "expected": "50052",
+      "got": "50052",
+      "message": "AADSTS50052: The password entered exceeds the maximum length. Please reach out to your admin to reset the password."
+    },
+    {
+      "scenario": "Deleted user signs in",
+      "expected": "500341 / 50034",
+      "got": "65001",
+      "message": "AADSTS65001: The user or administrator has not consented to use the application with ID '18e88a5a-6bed-4382-9565-a0cae44454eb' named 'lab-signin-client'. Send a"
+    },
+    {
+      "scenario": "Device code that was never issued",
+      "expected": "70020 / 70000 / 9002313",
+      "got": "7000014",
+      "message": "AADSTS7000014: The provided value for the input parameter 'device_code' is not valid."
+    },
+    {
+      "scenario": "Device code requested on /consumers by a work-account app",
+      "expected": "90133 / 9002331 / 700016",
+      "got": "700016",
+      "message": "AADSTS700016: Application with identifier '18e88a5a-6bed-4382-9565-a0cae44454eb' was not found in the directory '9188040d-6c67-4c5b-b112-36a304b66dad'. This can"
+    },
+    {
+      "scenario": "Both scope and resource sent",
+      "expected": "9010010",
+      "got": "9010010",
+      "message": "AADSTS9010010: The resource parameter provided in the request doesn't match with the requested scopes."
+    },
+    {
+      "scenario": "Client assertion expired",
+      "expected": "700024",
+      "got": "700024",
+      "message": "AADSTS700024: Client assertion is not within its valid time range. Current time: 2026-10-30T17:08:40.4130764Z, assertion valid from 2026-10-30T16:52:40.0000000Z"
+    },
+    {
+      "scenario": "Authorize request for an app with no reply address (browser)",
+      "expected": "500113",
+      "got": "500113",
+      "message": "AADSTS500113: No reply address is registered for the application.",
+      "method": "Authorize request in a browser against a lab tenant"
+    },
+    {
+      "scenario": "Implicit access token requested, implicit grant not enabled (browser)",
+      "expected": "700051",
+      "got": "700051",
+      "message": "AADSTS700051: response_type 'token' is not enabled for the application.",
+      "method": "Authorize request in a browser against a lab tenant"
+    }
+  ]
+}
