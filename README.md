@@ -90,7 +90,7 @@ Two things the runs corrected about themselves, kept here because they are the k
 
 ## Cite
 
-Cite via DOI [10.5281/zenodo.23641385](https://doi.org/10.5281/zenodo.23641385) (Zenodo; always resolves to the latest version). Version DOIs: 1.1.0 is [10.5281/zenodo.23816201](https://doi.org/10.5281/zenodo.23816201), 1.0.0 is [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has **98 AADSTS codes**, 43 of them missing from Microsoft's error reference, plus **8 Microsoft Graph error codes**. 34 AADSTS codes were reproduced in a lab tenant, 16 of those with the sign-in log row read and 11 with the page's KQL run against it; `verification`, `logCaptured` and `kqlTested` show which.
+Cite via DOI [10.5281/zenodo.23641385](https://doi.org/10.5281/zenodo.23641385) (Zenodo; always resolves to the latest version). Version DOIs: 1.1.0 is [10.5281/zenodo.23816201](https://doi.org/10.5281/zenodo.23816201), 1.0.0 is [10.5281/zenodo.23641386](https://doi.org/10.5281/zenodo.23641386), or see `CITATION.cff`. The data in this repository is synced with the live site JSON and currently has **118 AADSTS codes**, 43 of them missing from Microsoft's error reference, plus **8 Microsoft Graph error codes**. 34 AADSTS codes were reproduced in a lab tenant, 16 of those with the sign-in log row read and 11 with the page's KQL run against it; `verification`, `logCaptured` and `kqlTested` show which.
 
 ## License
 
