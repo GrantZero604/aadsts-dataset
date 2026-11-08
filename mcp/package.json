@@ -2,7 +2,6 @@
   "name": "aadsts-mcp",
   "version": "0.1.0",
   "description": "Local stdio MCP server for the AADSTS sign-in error pages and lab runs on brambrinkmeier.com: look up a code, search, extract codes from pasted error text, read the lab evidence.",
-  "private": true,
   "type": "module",
   "bin": {
     "aadsts-mcp": "src/server.mjs"
@@ -38,5 +37,9 @@
   ],
   "devDependencies": {
     "@modelcontextprotocol/sdk": "1.32.2"
+  },
+  "mcpName": "io.github.grantzero604/aadsts-mcp",
+  "publishConfig": {
+    "access": "public"
   }
 }
