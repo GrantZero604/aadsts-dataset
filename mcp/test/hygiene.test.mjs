@@ -49,9 +49,10 @@ test('the snapshot is internally consistent', () => {
   assert.equal(labs.runs.reduce((n, r) => n + r.results.length, 0), labs.resultCount);
 });
 
-test('no runtime dependencies, and npm publishing is blocked', () => {
+test('no runtime dependencies, and the package ships only src, snapshot and the README', () => {
   const pkg = JSON.parse(read(join(ROOT, 'package.json')));
-  assert.equal(pkg.private, true);
+  assert.notEqual(pkg.private, true);
+  assert.deepEqual(pkg.files, ['src/', 'snapshot/', 'README.md']);
   assert.equal(pkg.dependencies, undefined);
 });
 
