@@ -1,0 +1,42 @@
+{
+  "name": "aadsts-mcp",
+  "version": "0.1.0",
+  "description": "Local stdio MCP server for the AADSTS sign-in error pages and lab runs on brambrinkmeier.com: look up a code, search, extract codes from pasted error text, read the lab evidence.",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "aadsts-mcp": "src/server.mjs"
+  },
+  "files": [
+    "src/",
+    "snapshot/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "snapshot": "node scripts/update-snapshot.mjs"
+  },
+  "license": "MIT",
+  "author": "Bram Brinkmeier (https://brambrinkmeier.com/)",
+  "homepage": "https://brambrinkmeier.com/for-agents/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrantZero604/aadsts-dataset.git",
+    "directory": "mcp"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "aadsts",
+    "entra-id",
+    "sign-in-errors",
+    "kql"
+  ],
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2"
+  }
+}

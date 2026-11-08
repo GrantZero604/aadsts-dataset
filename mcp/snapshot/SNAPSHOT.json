@@ -1,0 +1,9 @@
+{
+  "builtFrom": "a local build of the brambrinkmeier.com site (dist/), checked against its /checksums.json",
+  "takenAt": "2026-11-08T15:08:12.135Z",
+  "dataGeneratedAt": "2026-11-08T15:05:01.558Z",
+  "codeCount": 118,
+  "labReproducedCount": 34,
+  "labRunCount": 14,
+  "labResultCount": 505
+}

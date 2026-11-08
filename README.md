@@ -18,6 +18,7 @@ An open dataset that classifies Microsoft Entra ID `AADSTS` sign-in error codes 
 | `graph-errors.json` | Microsoft Graph error codes, with the exact message the live service returned |
 | `graph-errors.csv` | Same rows as CSV |
 | `lab/` | The scripts that produced the lab results, and the raw output of every run |
+| `mcp/` | A local MCP server (stdio, no runtime dependencies) that reads the site's JSON for AI clients: look up a code, search, extract codes from pasted error text, read the lab evidence. See [`mcp/README.md`](./mcp/README.md) |
 
 ## Fields
 
